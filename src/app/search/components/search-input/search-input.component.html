@@ -1,0 +1,28 @@
+<!-- <div class="ui four column grid">
+  <div class="ten wide column centered">
+    <div class="ui fluid action input">
+      <input
+        #input
+        type="text"
+        placeholder="Search for a video..."
+      >
+
+      <button class="ui primary button" (click)="search()">Search</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="ui four column grid">
+  <div class="ten wide column centered">
+    <div class="ui fluid action input">
+      <input
+        #input
+        type="text"
+        placeholder="Search for a video..."
+        (keydown.enter)="onEnter()"
+      >
+
+      <button class="ui primary button" (click)="search()">Search</button>
+    </div>
+  </div>
+</div>
