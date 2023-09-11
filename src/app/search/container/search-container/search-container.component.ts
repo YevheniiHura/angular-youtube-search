@@ -18,6 +18,12 @@ export class SearchContainerComponent {
   constructor(private searchService: SearchService) { }
 
   handleSearch(query: string) {
+
+    if (query.trim() === '') {
+      // Якщо користувач ввів лише пробіли, то просто завершуємо обробку
+      return;
+    }
+    
     if (query.length >= 1) {
       this.loading = true;
       this.searchService.getVideos(query)
@@ -45,7 +51,7 @@ export class SearchContainerComponent {
     }
   }
 
-  sortVideos() {
+  sortVideos() { // функція сортування відповідно до обраного користувачем параметру
     if (this.sortBy === 'name') {
       this.videos.sort((a, b) => a.title.localeCompare(b.title));
     } else if (this.sortBy === 'author') {

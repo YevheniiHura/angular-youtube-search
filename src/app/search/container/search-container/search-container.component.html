@@ -1,3 +1,4 @@
+<!doctype html>
 <div>
   <app-search-input (searchQuery)="handleSearch($event)"></app-search-input>
 
@@ -16,6 +17,7 @@
       <span class="ui centered" style="margin: 0 auto;">No Video Found</span>
     </div>
   </div>
+
   <div *ngIf="loading" style="margin: 3rem;">
     <div class="ui active centered inline loader"></div>
   </div>
